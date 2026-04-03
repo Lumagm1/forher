@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, My Love</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: #fdf6f0;
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .petal {
+    position: fixed;
+    width: 10px;
+    height: 14px;
+    border-radius: 50% 0 50% 0;
+    opacity: 0;
+    animation: fall linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes fall {
+    0%   { transform: translateY(-20px) rotate(0deg); opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  .heart-big {
+    font-size: 4rem;
+    animation: pulse 1.8s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(219, 112, 147, 0.4));
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: #8b3a5a;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: #c47a9a;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .scroll-hint {
+    font-size: 0.8rem;
+    color: #c9a0b5;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  .letter-section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .envelope {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow:
+      0 2px 0 #e8c8d6,
+      0 8px 40px rgba(180, 100, 140, 0.12);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .envelope-top {
+    background: linear-gradient(135deg, #f9e4ec 50%, #f4d0de 50%);
+    padding: 1.5rem 2.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #f0d0de;
+  }
+
+  .wax-seal {
+    width: 38px;
+    height: 38px;
+    background: #c0405e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(192, 64, 94, 0.3);
+    flex-shrink: 0;
+  }
+
+  .letter-meta {
+    font-size: 0.78rem;
+    color: #b08090;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .letter-meta strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #8b3a5a;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+
+  .letter-body {
+    padding: 2.5rem 3rem 3rem;
+    background:
+      repeating-linear-gradient(
+        transparent,
+        transparent 31px,
+        #f5e8ef 31px,
+        #f5e8ef 32px
+      );
+  }
+
+  .salutation {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #8b3a5a;
+    margin-bottom: 1.5rem;
+  }
+
+  .letter-text {
+    font-size: 1.05rem;
+    line-height: 2rem;
+    color: #4a2535;
+  }
+
+  .letter-text p {
+    margin-bottom: 1.5rem;
+  }
+
+  .signature-block {
+    margin-top: 2rem;
+    text-align: right;
+  }
+
+  .signature-label {
+    font-size: 0.8rem;
+    color: #b08090;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: #8b3a5a;
+  }
+
+  .florals {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #d4899f;
+    margin: 1.2rem 0;
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+  }
+
+  .footer-note {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #c4a0b4;
+    padding: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="heart-big">🌸</span>
+  <h1>A Letter<br><em>Just for You</em></h1>
+  <!-- EDIT: Change the tagline below -->
+  <p class="tagline">written with love, sealed with a kiss</p>
+  <p class="scroll-hint">scroll to read ↓</p>
+</div>
+
+<section class="letter-section">
+  <div class="envelope">
+    <div class="envelope-top">
+      <div class="wax-seal">💌</div>
+      <div class="letter-meta">
+        <!-- EDIT: Change "To My Love" to her name -->
+        <strong>To My Love</strong>
+        With all my heart
+      </div>
+    </div>
+    <div class="letter-body">
+
+      <!-- EDIT: Change "My dearest," to her name e.g. "My dearest Sarah," -->
+      <p class="salutation">My dearest,</p>
+
+      <div class="letter-text">
+        <!-- EDIT: Replace these paragraphs with your own words -->
+        <p>I wanted to find a way to tell you just how much you mean to me — not in passing, not tucked into a text — but properly, the way you deserve.</p>
+        <p>Every single day with you feels like something I didn't know I was allowed to have. You make ordinary moments feel like they belong in a love story. The way you laugh. The way you care. The way you make everything feel warmer just by being in it.</p>
+        <p>I think about all the little things: the way you say my name, the way you reach for my hand, the way you look when you don't know I'm watching — and I am endlessly, hopelessly in love with every single one.</p>
+        <p>You are my favourite person. My safe place. My home. And I just needed you to know that today, and every day.</p>
+      </div>
+
+      <div class="florals">✿ ✾ ✿ ✾ ✿</div>
+
+      <div class="signature-block">
+        <p class="signature-label">Forever yours</p>
+        <!-- EDIT: Change "Your Love" to your name -->
+        <p class="signature">Your Love 🌹</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<p class="footer-note">made with love, just for you ♡</p>
+
+<script>
+  const colors = ['#f4a0b5','#e8789a','#f9cdd8','#f0b0c8','#fbd5e0'];
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.cssText = `
+      left: ${Math.random()*100}vw;
+      background: ${colors[Math.floor(Math.random()*colors.length)]};
+      animation-duration: ${4 + Math.random()*6}s;
+      animation-delay: ${Math.random()*8}s;
+      width: ${8+Math.random()*8}px;
+      height: ${10+Math.random()*8}px;
+      transform: rotate(${Math.random()*360}deg);
+      border-radius: ${Math.random() > 0.5 ? '50% 0 50% 0' : '0 50% 0 50%'};
+    `;
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>
